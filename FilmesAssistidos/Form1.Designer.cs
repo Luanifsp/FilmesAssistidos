@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Filmes", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Filmes", System.Windows.Forms.HorizontalAlignment.Left);
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.labelNomeFilme = new System.Windows.Forms.Label();
             this.labelDataAssitido = new System.Windows.Forms.Label();
@@ -36,12 +36,17 @@
             this.labelLocal = new System.Windows.Forms.Label();
             this.comboBoxGenero = new System.Windows.Forms.ComboBox();
             this.textBoxLocal = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewFilmes = new System.Windows.Forms.ListView();
+            this.ColumnHeaderNome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderLocal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderGenero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderData = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonPesquisar = new System.Windows.Forms.Button();
             this.buttonAdicionar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonDeletar = new System.Windows.Forms.Button();
-            this.maskedTextBoxData = new System.Windows.Forms.MaskedTextBox();
+            this.dateTimePickerData = new System.Windows.Forms.DateTimePicker();
+            this.buttonSalvar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxNome
@@ -92,6 +97,7 @@
             this.comboBoxGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenero.FormattingEnabled = true;
             this.comboBoxGenero.Items.AddRange(new object[] {
+            "Selecione....",
             "Ação",
             "Aventura",
             "Comédia",
@@ -114,18 +120,46 @@
             this.textBoxLocal.TabIndex = 11;
             this.textBoxLocal.TextChanged += new System.EventHandler(this.textBoxLocal_TextChanged);
             // 
-            // listView1
+            // listViewFilmes
             // 
-            listViewGroup3.Header = "Filmes";
-            listViewGroup3.Name = "listViewGroupFilmes";
-            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup3});
-            this.listView1.Location = new System.Drawing.Point(12, 167);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(490, 189);
-            this.listView1.TabIndex = 12;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listViewFilmes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ColumnHeaderNome,
+            this.columnHeaderLocal,
+            this.columnHeaderGenero,
+            this.columnHeaderData});
+            this.listViewFilmes.FullRowSelect = true;
+            this.listViewFilmes.GridLines = true;
+            listViewGroup1.Header = "Filmes";
+            listViewGroup1.Name = "listViewGroupFilmes";
+            this.listViewFilmes.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            listViewGroup1});
+            this.listViewFilmes.Location = new System.Drawing.Point(12, 167);
+            this.listViewFilmes.Name = "listViewFilmes";
+            this.listViewFilmes.Size = new System.Drawing.Size(768, 255);
+            this.listViewFilmes.TabIndex = 12;
+            this.listViewFilmes.UseCompatibleStateImageBehavior = false;
+            this.listViewFilmes.View = System.Windows.Forms.View.Details;
+            this.listViewFilmes.SelectedIndexChanged += new System.EventHandler(this.listViewFilmes_SelectedIndexChanged);
+            // 
+            // ColumnHeaderNome
+            // 
+            this.ColumnHeaderNome.Text = "Nome Filme";
+            this.ColumnHeaderNome.Width = 189;
+            // 
+            // columnHeaderLocal
+            // 
+            this.columnHeaderLocal.Text = "Local";
+            this.columnHeaderLocal.Width = 210;
+            // 
+            // columnHeaderGenero
+            // 
+            this.columnHeaderGenero.Text = "Genero";
+            this.columnHeaderGenero.Width = 184;
+            // 
+            // columnHeaderData
+            // 
+            this.columnHeaderData.Text = "Data";
+            this.columnHeaderData.Width = 181;
             // 
             // buttonPesquisar
             // 
@@ -154,6 +188,7 @@
             this.buttonEditar.TabIndex = 15;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonDeletar
             // 
@@ -163,26 +198,37 @@
             this.buttonDeletar.TabIndex = 17;
             this.buttonDeletar.Text = "Deletar";
             this.buttonDeletar.UseVisualStyleBackColor = true;
+            this.buttonDeletar.Click += new System.EventHandler(this.buttonDeletar_Click);
             // 
-            // maskedTextBoxData
+            // dateTimePickerData
             // 
-            this.maskedTextBoxData.Location = new System.Drawing.Point(278, 118);
-            this.maskedTextBoxData.Mask = "00/00/0000";
-            this.maskedTextBoxData.Name = "maskedTextBoxData";
-            this.maskedTextBoxData.Size = new System.Drawing.Size(88, 20);
-            this.maskedTextBoxData.TabIndex = 18;
+            this.dateTimePickerData.Location = new System.Drawing.Point(278, 117);
+            this.dateTimePickerData.Name = "dateTimePickerData";
+            this.dateTimePickerData.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerData.TabIndex = 18;
+            // 
+            // buttonSalvar
+            // 
+            this.buttonSalvar.Location = new System.Drawing.Point(433, 13);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(75, 36);
+            this.buttonSalvar.TabIndex = 19;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 367);
-            this.Controls.Add(this.maskedTextBoxData);
+            this.ClientSize = new System.Drawing.Size(864, 434);
+            this.Controls.Add(this.buttonSalvar);
+            this.Controls.Add(this.dateTimePickerData);
             this.Controls.Add(this.buttonDeletar);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonAdicionar);
             this.Controls.Add(this.buttonPesquisar);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewFilmes);
             this.Controls.Add(this.textBoxLocal);
             this.Controls.Add(this.comboBoxGenero);
             this.Controls.Add(this.labelLocal);
@@ -192,6 +238,7 @@
             this.Controls.Add(this.textBoxNome);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,12 +253,17 @@
         private System.Windows.Forms.Label labelLocal;
         private System.Windows.Forms.ComboBox comboBoxGenero;
         private System.Windows.Forms.TextBox textBoxLocal;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewFilmes;
         private System.Windows.Forms.Button buttonPesquisar;
         private System.Windows.Forms.Button buttonAdicionar;
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonDeletar;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxData;
+        private System.Windows.Forms.DateTimePicker dateTimePickerData;
+        private System.Windows.Forms.ColumnHeader ColumnHeaderNome;
+        private System.Windows.Forms.ColumnHeader columnHeaderLocal;
+        private System.Windows.Forms.ColumnHeader columnHeaderGenero;
+        private System.Windows.Forms.ColumnHeader columnHeaderData;
+        private System.Windows.Forms.Button buttonSalvar;
 
     }
 }
