@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Filmes", System.Windows.Forms.HorizontalAlignment.Left);
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.labelNomeFilme = new System.Windows.Forms.Label();
             this.labelDataAssitido = new System.Windows.Forms.Label();
@@ -129,18 +128,13 @@
             this.columnHeaderData});
             this.listViewFilmes.FullRowSelect = true;
             this.listViewFilmes.GridLines = true;
-            listViewGroup1.Header = "Filmes";
-            listViewGroup1.Name = "listViewGroupFilmes";
-            this.listViewFilmes.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1});
             this.listViewFilmes.Location = new System.Drawing.Point(12, 167);
             this.listViewFilmes.Name = "listViewFilmes";
             this.listViewFilmes.Size = new System.Drawing.Size(768, 255);
             this.listViewFilmes.TabIndex = 12;
             this.listViewFilmes.UseCompatibleStateImageBehavior = false;
             this.listViewFilmes.View = System.Windows.Forms.View.Details;
-            this.listViewFilmes.SelectedIndexChanged += new System.EventHandler(this.listViewFilmes_SelectedIndexChanged);
-            // 
+           
             // ColumnHeaderNome
             // 
             this.ColumnHeaderNome.Text = "Nome Filme";
@@ -163,7 +157,7 @@
             // 
             // buttonPesquisar
             // 
-            this.buttonPesquisar.Location = new System.Drawing.Point(210, 12);
+            this.buttonPesquisar.Location = new System.Drawing.Point(214, 13);
             this.buttonPesquisar.Name = "buttonPesquisar";
             this.buttonPesquisar.Size = new System.Drawing.Size(75, 37);
             this.buttonPesquisar.TabIndex = 13;
@@ -204,7 +198,7 @@
             // 
             this.dateTimePickerData.Location = new System.Drawing.Point(278, 117);
             this.dateTimePickerData.Name = "dateTimePickerData";
-            this.dateTimePickerData.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerData.Size = new System.Drawing.Size(230, 20);
             this.dateTimePickerData.TabIndex = 18;
             // 
             // buttonSalvar
