@@ -134,7 +134,7 @@
             this.listViewFilmes.TabIndex = 12;
             this.listViewFilmes.UseCompatibleStateImageBehavior = false;
             this.listViewFilmes.View = System.Windows.Forms.View.Details;
-           
+            // 
             // ColumnHeaderNome
             // 
             this.ColumnHeaderNome.Text = "Nome Filme";
@@ -231,7 +231,7 @@
             this.Controls.Add(this.labelNomeFilme);
             this.Controls.Add(this.textBoxNome);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Filmes Assistidos";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
