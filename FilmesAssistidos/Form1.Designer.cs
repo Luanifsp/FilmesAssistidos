@@ -60,36 +60,36 @@
             this.labelNomeFilme.AutoSize = true;
             this.labelNomeFilme.Location = new System.Drawing.Point(12, 55);
             this.labelNomeFilme.Name = "labelNomeFilme";
-            this.labelNomeFilme.Size = new System.Drawing.Size(65, 13);
+            this.labelNomeFilme.Size = new System.Drawing.Size(72, 13);
             this.labelNomeFilme.TabIndex = 5;
-            this.labelNomeFilme.Text = "Nome Filme:";
+            this.labelNomeFilme.Text = "* Nome Filme:";
             // 
             // labelDataAssitido
             // 
             this.labelDataAssitido.AutoSize = true;
             this.labelDataAssitido.Location = new System.Drawing.Point(275, 98);
             this.labelDataAssitido.Name = "labelDataAssitido";
-            this.labelDataAssitido.Size = new System.Drawing.Size(77, 13);
+            this.labelDataAssitido.Size = new System.Drawing.Size(84, 13);
             this.labelDataAssitido.TabIndex = 6;
-            this.labelDataAssitido.Text = "Data Assistido:";
+            this.labelDataAssitido.Text = "* Data Assistido:";
             // 
             // labelGenero
             // 
             this.labelGenero.AutoSize = true;
             this.labelGenero.Location = new System.Drawing.Point(275, 52);
             this.labelGenero.Name = "labelGenero";
-            this.labelGenero.Size = new System.Drawing.Size(45, 13);
+            this.labelGenero.Size = new System.Drawing.Size(52, 13);
             this.labelGenero.TabIndex = 7;
-            this.labelGenero.Text = "Gênero:";
+            this.labelGenero.Text = "* Gênero:";
             // 
             // labelLocal
             // 
             this.labelLocal.AutoSize = true;
             this.labelLocal.Location = new System.Drawing.Point(12, 97);
             this.labelLocal.Name = "labelLocal";
-            this.labelLocal.Size = new System.Drawing.Size(36, 13);
+            this.labelLocal.Size = new System.Drawing.Size(43, 13);
             this.labelLocal.TabIndex = 8;
-            this.labelLocal.Text = "Local:";
+            this.labelLocal.Text = "* Local:";
             // 
             // comboBoxGenero
             // 
@@ -110,7 +110,7 @@
             this.comboBoxGenero.Name = "comboBoxGenero";
             this.comboBoxGenero.Size = new System.Drawing.Size(130, 21);
             this.comboBoxGenero.TabIndex = 10;
-            // 
+           
             // textBoxLocal
             // 
             this.textBoxLocal.Location = new System.Drawing.Point(15, 118);
@@ -130,7 +130,7 @@
             this.listViewFilmes.GridLines = true;
             this.listViewFilmes.Location = new System.Drawing.Point(12, 167);
             this.listViewFilmes.Name = "listViewFilmes";
-            this.listViewFilmes.Size = new System.Drawing.Size(768, 255);
+            this.listViewFilmes.Size = new System.Drawing.Size(772, 255);
             this.listViewFilmes.TabIndex = 12;
             this.listViewFilmes.UseCompatibleStateImageBehavior = false;
             this.listViewFilmes.View = System.Windows.Forms.View.Details;
@@ -163,6 +163,7 @@
             this.buttonPesquisar.TabIndex = 13;
             this.buttonPesquisar.Text = "Pesquisar";
             this.buttonPesquisar.UseVisualStyleBackColor = true;
+            this.buttonPesquisar.Click += new System.EventHandler(this.buttonPesquisar_Click);
             // 
             // buttonAdicionar
             // 
@@ -215,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 434);
+            this.ClientSize = new System.Drawing.Size(796, 434);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.dateTimePickerData);
             this.Controls.Add(this.buttonDeletar);

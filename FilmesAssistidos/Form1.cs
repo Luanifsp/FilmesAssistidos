@@ -30,8 +30,7 @@ namespace FilmesAssistidos
         //Edita o item
         public void EditarDados()
         {
-            //buttonSalvar.Visible = true;
-            //buttonAdicionar.Enabled = false;
+            buttonAdicionar.Enabled = false;
 
             // Verifica se foi selecionado algum item do listView
             if (listViewFilmes.SelectedItems.Count != 0)
@@ -51,11 +50,19 @@ namespace FilmesAssistidos
             }
         }
 
-        ListViewItem novoItem =  new ListViewItem();
-        
+
+        ListViewItem novoItem = new ListViewItem();
+        List<ListViewItem> Lista = new List<ListViewItem>();
+        Dictionary<string, int> Filmes = new Dictionary<string, int>();
+
+
+
+
         //Botão adicionar
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
+
+            
             // Validação dos campos
 
             if (textBoxNome.Text == "" || textBoxLocal.Text == "" || comboBoxGenero.SelectedIndex == 0)
@@ -89,8 +96,12 @@ namespace FilmesAssistidos
 
                 //Adiciona o item ao List View
                 listViewFilmes.Items.Add(novoItem);
+                Lista.Add(novoItem);
+
 
                 limpar_Forms();
+
+
 
 
             }
@@ -173,9 +184,13 @@ namespace FilmesAssistidos
             } 
         }
 
-        
+        private void buttonPesquisar_Click(object sender, EventArgs e)
+        {
+            FormPesquisa Pesquisa = new FormPesquisa();
+            Pesquisa.Show();
+        }
 
-        
+      
         
 
        
